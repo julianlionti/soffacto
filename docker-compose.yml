@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    image: racinglocura07/soffacto:latest
+    container_name: soffacto
+    restart: unless-stopped
+    build:
+      context: .
+
+    ports:
+      - 8085:80

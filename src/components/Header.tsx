@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Button,
   Hidden,
   Icon,
   IconButton,
@@ -8,6 +9,7 @@ import {
 } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import LogoTrans from "../assets/images/logo_trans.png";
+import { useT } from "../translations";
 
 const Logo = styled("img")(({ theme }) => ({
   height: 70,
@@ -16,25 +18,33 @@ const Logo = styled("img")(({ theme }) => ({
   },
 }));
 
+const TitleMenu = styled("div")(({ theme }) => ({
+  display: "flex",
+  flex: 1,
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
+  marginRight: 160,
+}));
+
 export const Header = () => {
+  const t = useT();
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Logo src={LogoTrans} alt="Soffacto Logo" />
-          <div style={{ flex: 1 }} />
-          <Hidden smUp>
-            <IconButton
-              size="large"
-              edge="end"
-              color="inherit"
-              aria-label="menu"
-            >
-              <Icon>menu</Icon>
-            </IconButton>
+    <AppBar position="static">
+      <Toolbar>
+        <Logo src={LogoTrans} alt="Soffacto Logo" />
+        <TitleMenu>
+          <Hidden smDown>
+            <Button color="inherit">{t("about")}</Button>
+            <Button color="inherit">{t("services")}</Button>
           </Hidden>
-        </Toolbar>
-      </AppBar>
-    </Box>
+        </TitleMenu>
+        <Hidden smUp>
+          <IconButton size="large" edge="end" color="inherit" aria-label="menu">
+            <Icon>menu</Icon>
+          </IconButton>
+        </Hidden>
+      </Toolbar>
+    </AppBar>
   );
 };

@@ -6,4 +6,7 @@ export const theme = createTheme({
     primary: blue,
     mode: "dark",
   },
+  typography: {
+    fontFamily: "Ink free",
+  },
 });

@@ -3,6 +3,7 @@ import { PropsWithChildren } from "react";
 
 const Root = styled("div")(() => ({
   height: "100vh",
+  marginTop: -80,
 }));
 
 type Props = PropsWithChildren<unknown>;

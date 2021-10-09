@@ -7,7 +7,6 @@ export const LandingPage = () => {
     <div>
       <Header />
       <VideoBg />
-      <Typography variant="h1">sssDalee dalee</Typography>
     </div>
   );
 };
