@@ -30,7 +30,7 @@ const TitleMenu = styled("div")(({ theme }) => ({
 export const Header = () => {
   const t = useT();
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Toolbar>
         <Logo src={LogoTrans} alt="Soffacto Logo" />
         <TitleMenu>

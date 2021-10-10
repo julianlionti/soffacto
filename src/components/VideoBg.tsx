@@ -14,16 +14,6 @@ const Root = styled("video")`
   z-index: -1;
 `;
 
-const Content = styled("div")`
-  display: flex;
-  height: 100%;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-`;
-
 export const VideoBg = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const t = useT();
@@ -38,20 +28,18 @@ export const VideoBg = () => {
   }, []);
 
   return (
-    <Section>
+    <Section noOffset center>
       <Root
         ref={(e) => (videoRef.current = e)}
         muted
         preload="none"
-        poster="img/cover.jpg"
-        width="300"
+        loop
+        poster={PreloadImg}
       >
         <source src={Video} type="video/mp4" />
       </Root>
-      <Content>
-        <Typography variant="h1">Soffacto</Typography>
-        <Typography variant="h4">{t("description")}</Typography>
-      </Content>
+      <Typography variant="h1">Soffacto</Typography>
+      <Typography variant="h4">{t("description")}</Typography>
     </Section>
   );
 };

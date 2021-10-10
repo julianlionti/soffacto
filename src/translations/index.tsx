@@ -4,7 +4,13 @@ import { initReactI18next, useTranslation } from "react-i18next";
 import { enUs } from "./en_us";
 import { esAr } from "./es_ar";
 
-export type Translations = "description" | "about" | "services";
+export type Translations =
+  | "description"
+  | "about"
+  | "services"
+  | "about.title"
+  | "about.maintitle";
+
 export type Translation = Record<Translations, string>;
 
 export const initTranslations = (): void => {

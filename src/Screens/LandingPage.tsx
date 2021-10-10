@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { About } from "../components/About";
 import { Header } from "../components/Header";
 import { VideoBg } from "../components/VideoBg";
 
@@ -7,6 +7,7 @@ export const LandingPage = () => {
     <div>
       <Header />
       <VideoBg />
+      <About />
     </div>
   );
 };
