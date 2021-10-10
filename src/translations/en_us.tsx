@@ -16,4 +16,11 @@ export const enUs: Translation = {
     "Utilizamos últimas tecnologías para mejorar nuestros servicios",
   "services.3.title": "Asesoramiento",
   "services.3.description": "¿No sabes bien que queres? Contactanos!",
+  team: "Team",
+  "team.title": "Soffacto Team",
+  "footer.about": "About us",
+  "footer.about.howitworks": "How it works",
+  "footer.about.investors": "Investors",
+  "footer.about.testimonials": "Testimonials",
+  "footer.socialMedia": "Social Media",
 };

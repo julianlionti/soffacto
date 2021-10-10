@@ -1,6 +1,6 @@
 import { AppBar, Hidden, Icon, IconButton, Toolbar } from "@mui/material";
 import { styled } from "@mui/material";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import LogoTrans from "../assets/images/logo_trans.png";
 import { useT } from "../translations";
 import { ButtonLink } from "./common/ButtonLink";
@@ -17,9 +17,7 @@ const Logo = styled("img")(({ theme }) => ({
   cursor: "pointer",
 }));
 
-const BottonRoot = styled("div")``;
-
-export const MenuBtns: Sections[] = ["home", "about", "services"];
+export const MenuBtns: Sections[] = ["home", "about", "services", "team"];
 
 export const Header = () => {
   const mobileRef = useRef<Sections | null>(null);
@@ -65,7 +63,7 @@ export const Header = () => {
           <Space />
           <FlexDiv>
             <Hidden smDown>
-              {MenuBtns.map((section) => (
+              {MenuBtns.filter((e) => e !== "home").map((section) => (
                 <ButtonLink
                   key={section}
                   isActive={section === active}

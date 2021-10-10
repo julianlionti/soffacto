@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 import { PropsWithChildren, useCallback } from "react";
 
-export type Sections = "home" | "about" | "services" | "large";
+export type Sections = "home" | "about" | "services" | "large" | "team";
 
 type StyleProps = Partial<{
   noOffset: boolean;
@@ -15,7 +15,7 @@ const Root = styled("div", {
 })<StyleProps>(({ contrast, noOffset, theme, large }) => ({
   height: large ? undefined : "100vh",
   minHeight: large ? "100vh" : undefined,
-  padding: `0 ${theme.spacing(2)}`,
+  padding: `0 ${theme.spacing(1)}`,
   [theme.breakpoints.up("sm")]: {
     padding: `0 ${theme.spacing(20)}`,
   },

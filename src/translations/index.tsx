@@ -17,7 +17,14 @@ export type Translations =
   | "services.2.title"
   | "services.2.description"
   | "services.3.title"
-  | "services.3.description";
+  | "services.3.description"
+  | "team"
+  | "team.title"
+  | "footer.socialMedia"
+  | "footer.about"
+  | "footer.about.howitworks"
+  | "footer.about.testimonials"
+  | "footer.about.investors";
 
 export type Translation = Record<Translations, string>;
 

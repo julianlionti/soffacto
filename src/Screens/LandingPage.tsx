@@ -1,6 +1,8 @@
 import { About } from "../components/About";
+import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Services } from "../components/Services";
+import { Team } from "../components/Team";
 import { VideoBg } from "../components/VideoBg";
 
 export const LandingPage = () => {
@@ -10,6 +12,8 @@ export const LandingPage = () => {
       <VideoBg />
       <About />
       <Services />
+      <Team />
+      <Footer />
     </div>
   );
 };

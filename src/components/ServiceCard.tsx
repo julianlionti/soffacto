@@ -7,9 +7,12 @@ import ServerIcon from "../assets/icons/server.svg";
 import HelpIcon from "../assets/icons/help.svg";
 import { Space } from "./common/Space";
 
-const Root = styled(Card)`
-  width: 300px;
-`;
+const Root = styled(Card)(({ theme }) => ({
+  width: 325,
+  // [theme.breakpoints.up("sm")]: {
+  //   width: 300,
+  // },
+}));
 
 const ImageRoot = styled("div")`
   display: flex;
@@ -21,7 +24,7 @@ const ImageRoot = styled("div")`
 const TextRoot = styled("div")`
   height: 75px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 `;
@@ -54,7 +57,9 @@ export const ServiceCard = (props: Props) => {
         </ImageRoot>
         <Space />
         <TextRoot>
-          <BoldTipo>{t(`services.${position}.title` as any)}</BoldTipo>
+          <BoldTipo variant="h5">
+            {t(`services.${position}.title` as any)}
+          </BoldTipo>
           <Typography>
             {t(`services.${position}.description` as any)}
           </Typography>
