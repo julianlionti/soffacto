@@ -1,12 +1,28 @@
-import { styled } from "@mui/system";
+import { styled } from "@mui/material";
 import { PropsWithChildren, useCallback } from "react";
 
-type StyleProps = Partial<{ noOffset: boolean }>;
-const Root = styled("div")<StyleProps>(({ noOffset }) => ({
-  height: "100vh",
+export type Sections = "home" | "about" | "services" | "large";
+
+type StyleProps = Partial<{
+  noOffset: boolean;
+  contrast: boolean;
+  large: boolean;
+}>;
+
+const Root = styled("div", {
+  shouldForwardProp: (props: any) =>
+    props !== "noOffset" && props !== "contrast" && props !== "large",
+})<StyleProps>(({ contrast, noOffset, theme, large }) => ({
+  height: large ? undefined : "100vh",
+  minHeight: large ? "100vh" : undefined,
+  padding: `0 ${theme.spacing(2)}`,
+  [theme.breakpoints.up("sm")]: {
+    padding: `0 ${theme.spacing(20)}`,
+  },
   paddingTop: noOffset ? 0 : 80,
-  paddingLeft: 32,
-  paddingRight: 32,
+  backgroundColor: contrast
+    ? theme.palette.common.white
+    : theme.palette.common.black,
 }));
 
 const Content = styled("div")`
@@ -17,9 +33,17 @@ const Content = styled("div")`
   justify-content: center;
 `;
 
-type Props = PropsWithChildren<Partial<{ center: boolean; noOffset: boolean }>>;
+type Props = PropsWithChildren<
+  Partial<{
+    center: boolean;
+    noOffset: boolean;
+    name: Sections;
+    contrast: boolean;
+    large: boolean;
+  }>
+>;
 export const Section = (props: Props) => {
-  const { children, center, noOffset } = props;
+  const { children, center, noOffset, name, contrast, large } = props;
 
   const renderChildren = useCallback(() => {
     if (center) return <Content>{children}</Content>;
@@ -27,5 +51,9 @@ export const Section = (props: Props) => {
     return children;
   }, []);
 
-  return <Root noOffset={noOffset}>{renderChildren()}</Root>;
+  return (
+    <Root id={name} noOffset={noOffset} contrast={contrast} large={large}>
+      {renderChildren()}
+    </Root>
+  );
 };

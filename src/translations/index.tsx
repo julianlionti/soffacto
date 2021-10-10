@@ -7,9 +7,17 @@ import { esAr } from "./es_ar";
 export type Translations =
   | "description"
   | "about"
-  | "services"
   | "about.title"
-  | "about.maintitle";
+  | "about.maintitle"
+  | "about.descripction"
+  | "services"
+  | "services.title"
+  | "services.1.title"
+  | "services.1.description"
+  | "services.2.title"
+  | "services.2.description"
+  | "services.3.title"
+  | "services.3.description";
 
 export type Translation = Record<Translations, string>;
 

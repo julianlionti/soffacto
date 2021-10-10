@@ -1,17 +1,18 @@
-import { styled } from "@mui/system";
+import { styled } from "@mui/material";
 import { Section } from "./Section";
 import { Typography } from "@mui/material";
 import { useT } from "../translations";
 import Video from "url:../assets/videos/video.mp4";
 import PreloadImg from "url:../assets/images/preload.jpg";
 import { useEffect, useRef } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const Root = styled("video")`
   height: 100%;
   width: 100%;
   object-fit: cover;
   position: absolute;
-  z-index: -1;
+  /* z-index: -1; */
 `;
 
 export const VideoBg = () => {
@@ -28,7 +29,7 @@ export const VideoBg = () => {
   }, []);
 
   return (
-    <Section noOffset center>
+    <Section noOffset center name="home">
       <Root
         ref={(e) => (videoRef.current = e)}
         muted
@@ -38,8 +39,12 @@ export const VideoBg = () => {
       >
         <source src={Video} type="video/mp4" />
       </Root>
-      <Typography variant="h1">Soffacto</Typography>
-      <Typography variant="h4">{t("description")}</Typography>
+      <Fade triggerOnce>
+        <Typography variant="h1">Soffacto</Typography>
+        <Typography variant="h4" sx={{ textAlign: "center" }}>
+          {t("description")}
+        </Typography>
+      </Fade>
     </Section>
   );
 };
