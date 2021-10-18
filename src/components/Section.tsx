@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 import { PropsWithChildren, useCallback } from "react";
 
-export type Sections = "home" | "about" | "services" | "large" | "team";
+export type Sections = "home" | "about" | "services" | "team" | "contact";
 
 type StyleProps = Partial<{
   noOffset: boolean;

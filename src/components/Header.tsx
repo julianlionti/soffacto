@@ -17,7 +17,13 @@ const Logo = styled("img")(({ theme }) => ({
   cursor: "pointer",
 }));
 
-export const MenuBtns: Sections[] = ["home", "about", "services", "team"];
+export const MenuBtns: Sections[] = [
+  "home",
+  "about",
+  "services",
+  "team",
+  "contact",
+];
 
 export const Header = () => {
   const mobileRef = useRef<Sections | null>(null);

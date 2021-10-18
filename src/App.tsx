@@ -1,10 +1,10 @@
 import { CssBaseline, ThemeProvider, Typography } from "@mui/material";
 import { MainRoute } from "./routes/MainRoute";
-import { theme } from "./themes";
+import { darkTheme } from "./themes";
 
 export const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <MainRoute />
     </ThemeProvider>

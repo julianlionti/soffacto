@@ -2,10 +2,20 @@ import { createTheme } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import "../fonts/fonts.css";
 
-export const theme = createTheme({
+export const darkTheme = createTheme({
   palette: {
     primary: blue,
     mode: "dark",
+  },
+  typography: {
+    fontFamily: "Inkfree",
+  },
+});
+
+export const lightTheme = createTheme({
+  palette: {
+    primary: blue,
+    mode: "light",
   },
   typography: {
     fontFamily: "Inkfree",
