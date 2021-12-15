@@ -2,8 +2,8 @@ import { styled } from "@mui/material";
 import { Section } from "./Section";
 import { Typography } from "@mui/material";
 import { useT } from "../translations";
-import Video from "url:../assets/videos/video.mp4";
-import PreloadImg from "url:../assets/images/preload.jpg";
+import Video from "../assets/videos/video.mp4";
+import PreloadImg from "../assets/images/preload.jpg";
 import { useEffect, useRef } from "react";
 import { Fade } from "react-awesome-reveal";
 
