@@ -1,11 +1,9 @@
-version: "3.2"
+version: "3.3"
 services:
-  app:
+  docker:
     image: racinglocura07/soffacto:latest
     container_name: soffacto
     restart: unless-stopped
-    build:
-      context: .
-
+    build: .
     ports:
       - 8085:80
