@@ -2,7 +2,9 @@ pipeline {
   options {
       timeout(time: 1, unit: 'HOURS') 
   }
-  agent any
+  agent {
+    docker { image 'node:14.15.4-alpine' }
+  }
   environment {
         userName = 'racinglocura07'
         DOCKERHUB_CREDENTIALS=credentials('dockerhub')
@@ -14,6 +16,7 @@ pipeline {
         sh '''
           docker --version
           docker-compose --version
+          node -v
         '''
       }
     }
