@@ -4,11 +4,6 @@ WORKDIR /app
 
 COPY package*.json ./
 
-FROM build as test
-RUN npm ci
-COPY . .
-CMD [ "npm", "run", "test" ]
-
 RUN npm install
 
 COPY . .
