@@ -14,17 +14,16 @@ pipeline {
         sh '''
           docker --version
           docker-compose --version
-          node -v
         '''
       }
     }
 
-    stage("Testing") {
-      steps {
-        sh "npm install"
-        sh "npm run test"
-      }
-    }
+    // stage("Testing") {
+    //   steps {
+    //     sh "npm install"
+    //     sh "npm run test"
+    //   }
+    // }
 
     stage('Login') {
       steps {
