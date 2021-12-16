@@ -47,8 +47,6 @@ export const Team = () => {
             <Avatar src="https://mui.com/static/images/avatar/5.jpg" />
             <Avatar src="https://mui.com/static/images/avatar/6.jpg" />
             <Avatar src="https://mui.com/static/images/avatar/7.jpg" />
-            <Avatar src="https://mui.com/static/images/avatar/8.jpg" />
-            <Avatar src="https://mui.com/static/images/avatar/9.jpg" />
           </AvatarGroup>
         </div>
       </HorizontalDiv>
