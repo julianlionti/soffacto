@@ -2,9 +2,7 @@ pipeline {
   options {
       timeout(time: 1, unit: 'HOURS') 
   }
-  agent {
-    docker { image 'node:14.15.4-alpine' }
-  }
+  agent any
   environment {
         userName = 'racinglocura07'
         DOCKERHUB_CREDENTIALS=credentials('dockerhub')
