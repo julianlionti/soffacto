@@ -9,24 +9,19 @@ pipeline {
   }
 
   stages {
-    node {
-      stage('Tooling versions') {
-        steps {
-          sh '''
-            docker --version
-            docker-compose --version
-            node -v
-          '''
-        }
+    stage('Tooling versions') {
+      steps {
+        sh '''
+          docker --version
+          docker-compose --version
+          node -v
+        '''
       }
     }
 
-
-    node {
-      stage("Testing") {
-        steps {
-          sh "npm run test"
-        }
+    stage("Testing") {
+      steps {
+        sh "npm run test"
       }
     }
 
